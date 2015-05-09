@@ -1,8 +1,5 @@
-# Inherit CM common Phone stuff.
-$(call inherit-product, vendor/carbon/config/common_full_phone.mk)
-
-# Enhanced NFC
-$(call inherit-product, vendor/carbon/config/nfc_enhanced.mk)
+# Inherit Carbon common Phone stuff.
+$(call inherit-product, vendor/carbon/config/common_phone.mk)
 
 $(call inherit-product, device/sony/z3c/full_z3c.mk)
 
