@@ -29,7 +29,6 @@
 		</resource>
 
 		<!-- device-specific -->
-		<resource name="backlight" type="sysfs">/sys/class/leds/wled:backlight/max_brightness</resource>
 		<resource name="charger" type="sysfs">/sys/class/power_supply/battery/system_temp_level</resource>
 		<resource name="charge_en" type="sysfs">/sys/class/power_supply/battery/charging_enabled</resource>
 		<resource name="dc" type="sysfs">/sys/class/power_supply/qpnp-dc/current_max</resource>
@@ -91,27 +90,9 @@
 		<mitigation level="9"><value resource="charger">9</value></mitigation>
 	</control>
 
-	<control name="modem">
-		<mitigation level="off"><value resource="modem">0</value></mitigation>
-		<mitigation level="1"><value resource="modem">1</value></mitigation>
-	</control>
-
 	<control name="shutdown">
 		<mitigation level="off" />
 		<mitigation level="1"><value resource="shutdown" /></mitigation>
-	</control>
-
-	<control name="backlight">
-		<mitigation level="off"><value resource="backlight">4095</value></mitigation>
-		<mitigation level="1"><value resource="backlight">3581</value></mitigation>
-		<mitigation level="2"><value resource="backlight">3082</value></mitigation>
-		<mitigation level="3"><value resource="backlight">2569</value></mitigation>
-		<mitigation level="4"><value resource="backlight">2055</value></mitigation>
-		<mitigation level="5"><value resource="backlight">1718</value></mitigation>
-		<mitigation level="6"><value resource="backlight">1413</value></mitigation>
-		<mitigation level="7"><value resource="backlight">1027</value></mitigation>
-		<mitigation level="8"><value resource="backlight">819</value></mitigation>
-		<mitigation level="9"><value resource="backlight">513</value></mitigation>
 	</control>
 
 	<control name="gpu">
@@ -152,14 +133,13 @@
 		</threshold>
 	</configuration>
 
-	<!-- usb, dc, charging, modem,backlight -->
+	<!-- usb, dc, charging, modem -->
 	<configuration sensor="temp-msm">
 		<threshold>
 			<mitigation name="cpu" level="off" />
 			<mitigation name="charging" level="off" />
 			<mitigation name="usb" level="off" />
 			<mitigation name="dc" level="off" />
-			<mitigation name="backlight" level="off" />
 			<mitigation name="gpu" level="off" />
 		</threshold>
 		<threshold trigger="38" clear="36">
@@ -167,7 +147,6 @@
 			<mitigation name="charging" level="off" />
 			<mitigation name="usb" level="off" />
 			<mitigation name="dc" level="off" />
-			<mitigation name="backlight" level="1" />
 			<mitigation name="gpu" level="off" />
 		</threshold>
 		<threshold trigger="41" clear="37">
@@ -175,7 +154,6 @@
 			<mitigation name="charging" level="off" />
 			<mitigation name="usb" level="off" />
 			<mitigation name="dc" level="off" />
-			<mitigation name="backlight" level="2" />
 			<mitigation name="gpu" level="off" />
 		</threshold>
 		<threshold trigger="42" clear="39">
@@ -183,7 +161,6 @@
 			<mitigation name="charging" level="off" />
 			<mitigation name="usb" level="off" />
 			<mitigation name="dc" level="off" />
-			<mitigation name="backlight" level="2" />
 			<mitigation name="gpu" level="off" />
 		</threshold>
 		<threshold trigger="43" clear="40">
@@ -191,7 +168,6 @@
 			<mitigation name="charging" level="5" />
 			<mitigation name="usb" level="2" />
 			<mitigation name="dc" level="2" />
-			<mitigation name="backlight" level="3" />
 			<mitigation name="gpu" level="off" />
 		</threshold>
 		<threshold trigger="44" clear="41">
@@ -199,7 +175,6 @@
 			<mitigation name="charging" level="5" />
 			<mitigation name="usb" level="2" />
 			<mitigation name="dc" level="2" />
-			<mitigation name="backlight" level="3" />
 			<mitigation name="gpu" level="off" />
 		</threshold>
 		<threshold trigger="45" clear="42">
@@ -207,7 +182,6 @@
 			<mitigation name="charging" level="5" />
 			<mitigation name="usb" level="2" />
 			<mitigation name="dc" level="2" />
-			<mitigation name="backlight" level="4" />
 			<mitigation name="gpu" level="off" />
 		</threshold>
 		<threshold trigger="47" clear="44">
@@ -215,7 +189,6 @@
 			<mitigation name="charging" level="5" />
 			<mitigation name="usb" level="2" />
 			<mitigation name="dc" level="2" />
-			<mitigation name="backlight" level="4" />
 			<mitigation name="gpu" level="off" />
 		</threshold>
 		<threshold trigger="49" clear="45">
@@ -223,7 +196,6 @@
 			<mitigation name="charging" level="8" />
 			<mitigation name="usb" level="3" />
 			<mitigation name="dc" level="3" />
-			<mitigation name="backlight" level="4" />
 			<mitigation name="gpu" level="4" />
 		</threshold>
 		<threshold trigger="50" clear="46">
@@ -231,7 +203,6 @@
 			<mitigation name="charging" level="8" />
 			<mitigation name="usb" level="3" />
 			<mitigation name="dc" level="3" />
-			<mitigation name="backlight" level="4" />
 			<mitigation name="gpu" level="4" />
 		</threshold>
 		<threshold trigger="52" clear="48">
@@ -239,7 +210,6 @@
 			<mitigation name="charging" level="8" />
 			<mitigation name="usb" level="3" />
 			<mitigation name="dc" level="3" />
-			<mitigation name="backlight" level="4" />
 			<mitigation name="gpu" level="4" />
 		</threshold>
 		<threshold trigger="60" clear="50">
@@ -247,7 +217,6 @@
 			<mitigation name="charging" level="8" />
 			<mitigation name="usb" level="4" />
 			<mitigation name="dc" level="4" />
-			<mitigation name="backlight" level="5" />
 			<mitigation name="gpu" level="4" />
 		</threshold>
 		<threshold trigger="78" clear="55">
