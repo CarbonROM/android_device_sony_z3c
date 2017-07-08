@@ -1,5 +1,8 @@
-# Inherit CM common Phone stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+# Inherit Carbon GSM telephony parts
+$(call inherit-product, vendor/carbon/config/gsm.mk)
+
+# Inherit Carbon product configuration
+$(call inherit-product, vendor/carbon/config/common.mk)
 
 $(call inherit-product, device/sony/z3c/full_z3c.mk)
 
@@ -7,5 +10,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=D5803
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=Sony/D5803/D5833:6.0.1/23.5.A.1.291/2769308465:user/release-keys
 PRODUCT_BUILD_PROP_OVERRIDES += PRIVATE_BUILD_DESC="D5803-user 6.0.1 23.5.A.1.291 2769308465 release-keys"
 
-PRODUCT_NAME := lineage_z3c
+PRODUCT_NAME := carbon_z3c
 PRODUCT_DEVICE := z3c
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.carbon.maintainer="Myself5"
