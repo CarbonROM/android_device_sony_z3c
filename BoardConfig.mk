@@ -23,9 +23,6 @@ DEVICE_PATH := device/sony/z3c
 # Assert
 TARGET_OTA_ASSERT_DEVICE := z3c
 
-# Include path
-TARGET_SPECIFIC_HEADER_PATH += $(DEVICE_PATH)/include
-
 # Kernel properties
 TARGET_KERNEL_CONFIG := lineageos_shinano_aries_defconfig
 
